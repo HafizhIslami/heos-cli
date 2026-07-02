@@ -1,0 +1,13 @@
+ollama:
+  host: http://localhost:11434
+  timeout: 300
+
+workers:
+  architect: qwen3:8b
+  engineer: qwen2.5-coder:7b
+
+workspace:
+  task_dir: tasks
+
+heos:
+  directory: .ai
