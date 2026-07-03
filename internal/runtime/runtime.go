@@ -1,8 +1,6 @@
 package runtime
 
 import (
-	"fmt"
-
 	"github.com/hynexis/heos-cli/internal/config"
 )
 
@@ -22,15 +20,5 @@ func New() (*Runtime, error) {
 }
 
 func (r *Runtime) Run() error {
-
-	fmt.Println("===================================")
-	fmt.Println(" HEOS CLI v1")
-	fmt.Println("===================================")
-
-	fmt.Println("Architect :", r.Config.Workers.Architect)
-	fmt.Println("Engineer  :", r.Config.Workers.Engineer)
-
-	fmt.Println("Ready.")
-
-	return nil
+	return r.Dispatch()
 }
