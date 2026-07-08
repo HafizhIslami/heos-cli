@@ -25,6 +25,17 @@ func (b *Builder) AddFile(path string) error {
 	return nil
 }
 
+func (b *Builder) AddFiles(files []string) error {
+
+	for _, file := range files {
+		if err := b.AddFile(file); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (b *Builder) Build() string {
 
 	return strings.Join(b.lines, "\n\n")
